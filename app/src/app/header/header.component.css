@@ -1,0 +1,19 @@
+nav {
+    background: rgb(16, 4, 228);
+}
+
+.nav-item {
+    text-align: right;
+} 
+
+.options{
+    float: right;
+}
+
+
+.active {
+    border-radius: 8px;
+    border-color: white;
+    border: 2px solid white;
+}
+
