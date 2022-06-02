@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <div >
+    <h1 class="m-0 mb-3">{{ ticker }}</h1>
+  </div>
+  <button type="button" id="close-btn" class="close p-0 border-0 m-1" aria-label="Close" (click)="buyModal.close('Cross click')">
+    <span class="m-0 border-0" aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<div>
+  <p>Current Price: {{ currentPrice | number: "1.0-2" }}</p>
+  <p>Money in Wallet: ${{ money | number: "1.0-2" }}</p>
+  <p>Quantity <input [(ngModel)]="inputQuantity" type="number" min="0" /></p>
+</div>
+
+
+<div class="modal-footer">
+  <p class="mr-auto">
+    Total : {{ inputQuantity * currentPrice | number: "1.2-2" }}
+  </p>
+  <button
+    type="button"
+    [disabled]="!inputQuantity || (purchasedQuantity && inputQuantity > purchasedQuantity)"
+    class="btn btn-outline-dark text-white border-0 bg-success border"
+    (click)="buyOrSell()"
+  >
+    {{ opt }}
+  </button>
+</div>
